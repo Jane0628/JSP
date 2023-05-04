@@ -14,20 +14,37 @@
   	<error-code>404</error-code>
   	<location>/Exception/error_404.jsp</location>
   </error-page>
-
+  
   <error-page>
   	<exception-type>java.lang.NullPointerException</exception-type>
-  	<location>/Exception/error_null.jsp</location>  
-  </error-page>  	
+  	<location>/Exception/error_null.jsp</location>
+  </error-page>
   
   <servlet>
-      <servlet-name>basic</servlet-name>
-      <servlet-class>kr.co.jsp.servlet.ServletBasic</servlet-class>
+  	<servlet-name>basic</servlet-name>
+  	<servlet-class>kr.co.jsp.servlet.ServletBasic</servlet-class>
   </servlet>
   
   <servlet-mapping>
-      <servlet-name>basic</servlet-name>
-      <url-pattern>/basic</url-pattern>
+  	<servlet-name>basic</servlet-name>
+  	<url-pattern>/basic</url-pattern>
   </servlet-mapping>
   
+  
 </web-app>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

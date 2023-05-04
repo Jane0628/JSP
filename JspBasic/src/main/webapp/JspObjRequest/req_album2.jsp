@@ -6,60 +6,66 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-	<style type="text/css">
-	
+	<style>
 		table {
-			margin: 0 auto;
+			width: 800px;
+		}
+		
+		tr {
 			text-align: center;
 		}
-		
-		table tr:nth-child(2) td:nth-child(1) {
-			width: 200px;
-			height: 200px;
-			
-			background-image: url("./박민영.jpg");
-			background-size: cover;
-			background-repeat: no-repeat;
-		}
-		
-		table tr:nth-child(3) td:nth-child(1) {
-			width: 200px;
-			height: 200px;
-		
-			background-image: url("./크리스틴 스튜어트.jpg");
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center;
-		}
-	
 	</style>
+
 </head>
 <body>
-	<form action="req_album_post.jsp" method="post">
-		<table border="1">
-			<tr>
-				<th>프로필 사진</th>
-				<th>이름</th>
-				<th>출생년도</th>
-				<th>추천작</th>		
-			</tr>
-			<tr>
-				<td></td>	
-				<td>
-					<a href="req_album_post.jsp?option=1">박민영</a>
-				</td>	
-				<td>1986년 3월 4일</td>	
-				<td>김비서가 왜 그럴까?</td>
-			</tr>
-			<tr>		
-				<td></td>	
-				<td>
-					<a href="req_album_post.jsp?option=2">크리스틴 스튜어트</a>
-				</td>	
-				<td>1990년 4월 9일</td>	
-				<td>트와일라잇 시리즈</td>	
-			</tr>
-		</table>
-	</form>
+
+	<div align="center">
+			<table border="1">
+				<tr>
+					<th>앨범 커버</th>
+					<th>가수</th>
+					<th>제목</th>
+					<th>발매일</th>
+				</tr>
+				<tr>
+					<td>
+						<img alt="pic1" src="ive.jpg" width="100px" height="100px">
+					</td>
+					<td>IVE (아이브)</td>
+					<td>
+						<a href="req_album_result.jsp?title=sel1">I AM</a>
+					</td>
+					<td>2023.04.10</td>
+				</tr>
+				<tr>
+					<td>
+						<img alt="pic1" src="ive.jpg" width="100px" height="100px">
+					</td>
+					<td>IVE (아이브)</td>
+					<td>
+						<a href="req_album_result.jsp?title=sel2">Kitsch</a>
+					</td>
+					<td>2023.04.10</td>
+				</tr>
+			</table>
+	</div>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

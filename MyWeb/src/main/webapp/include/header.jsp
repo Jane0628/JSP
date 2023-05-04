@@ -64,7 +64,7 @@
                         <a href="/MyWeb/join.user">BOARD</a>
                     </li>
                     <li>
-                        <a href="/MyWeb/join.user">LOGIN</a>
+                        <a href="/MyWeb/loginPage.user">LOGIN</a>
                     </li>
                     <li>
                         <a href="/MyWeb/joinPage.user" style="color:red">JOIN</a>

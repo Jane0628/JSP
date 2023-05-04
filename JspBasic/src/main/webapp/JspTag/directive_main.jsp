@@ -15,8 +15,28 @@
 		홈페이지 방문을 환영합니다! <br>
 		여기는 그렇게 보이지는 않겠지만 메인 페이지라고 칩시다~
 	</p>
-
-	<%@ include file="directive_footer.jsp" %>
 	
+	<%@ include file="directive_footer.jsp" %>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,6 +10,8 @@
     	String region = request.getParameter("region");
     	String introduce = request.getParameter("introduce");
     %>
+    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,13 +21,27 @@
 <body>
 
 	<p>
-		# ID : <%= id %> <br>
-		# PW : <%= pw %> <br>
-		# 성별 : <%= gender %> <br>
-		# 취미 : <%= Arrays.toString(hobby) %> <br>
-		# 지역 : <%= region %> <br>
-		# 자기 소개 : <%= introduce %>
+		# ID: <%=id %> <br>
+		# PW: <%=pw %> <br>
+		# 성별: <%=gender %> <br>
+		# 취미: <%=Arrays.toString(hobby) %> <br>
+		# 지역: <%=region %> <br>
+		# 자기소개: <%=introduce %>
 	</p>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

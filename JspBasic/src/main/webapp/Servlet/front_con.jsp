@@ -14,6 +14,22 @@
 	<a href="/JspBasic/list.board">글 목록 요청</a>
 	<a href="/JspBasic/update.board">글 수정 요청</a>
 	<a href="/JspBasic/delete.board">글 삭제 요청</a>
-	
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

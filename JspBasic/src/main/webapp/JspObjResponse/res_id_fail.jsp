@@ -9,8 +9,7 @@
 <body>
 
 	<h2>존재하지 않는 회원입니다.</h2>
-	<hr>
-	<a href="res_login_form.jsp">로그인으로 돌아가기</a>
+	<a href="res_login_form.jsp">로그인 페이지로</a>
 
 </body>
 </html>
