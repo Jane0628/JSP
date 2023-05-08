@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,14 +64,32 @@
                         <a href="/MyWeb/join.user">Member</a>
                     </li>
                     <li>
-                        <a href="/MyWeb/join.user">BOARD</a>
+                        <a href="/MyWeb/list.board">BOARD</a>
                     </li>
-                    <li>
-                        <a href="/MyWeb/loginPage.user">LOGIN</a>
-                    </li>
-                    <li>
-                        <a href="/MyWeb/joinPage.user" style="color:red">JOIN</a>
-                    </li>
+                    
+                    <!--------------------------------------------------------------------->
+                    
+                    <c:choose>
+                    	<c:when test="${user == null}">
+                    		<li>
+		                        <a href="/MyWeb/loginPage.user">LOGIN</a>
+		                    </li>
+		                    <li>
+		                        <a href="/MyWeb/joinPage.user" style="color:red">JOIN</a>
+		                    </li>
+                    	</c:when>
+                    	
+                    	<c:otherwise>
+	                    	<li>
+		                        <a href="/MyWeb/logout.user">LOGOUT</a>
+		                    </li>
+		                    <li>
+		                        <a href="/MyWeb/myPage.user" style="color:red">MY PAGE</a>
+		                    </li>
+		               	</c:otherwise>
+                    
+                    </c:choose>
+                    
                 </ul>
             </div>
 

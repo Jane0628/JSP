@@ -4,7 +4,6 @@ import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.myweb.user.model.UserDAO;
 import com.myweb.user.model.UserVO;
@@ -31,16 +30,16 @@ public class ChangePwService implements IUserService {
 		
 		response.setContentType("text/html; charset=UTF-8");
 		String htmlCode;
-		PrintWriter out;
 		
-		HttpSession session = request.getSession();
-		UserVO user = (UserVO) session.getAttribute("user");
-		String id = user.getUserId();
+//		HttpSession session = request.getSession();
+//		UserVO user = (UserVO) session.getAttribute("user");
+//		String id = user.getUserId();
 		
-		try {
-			out = response.getWriter();
+		String id = ((UserVO) request.getSession().getAttribute("user")).getUserId();
+		
+		try {PrintWriter out = response.getWriter();
 			
-			if(dao.userCheck(id, oldPw) == 1 && dao.changePassword(newPw, id) != 0) {
+			if(dao.userCheck(id, oldPw) == 1 && dao.changePassword(id, newPw) != 0) {
 				htmlCode = "<script>\r\n"
 							  + "alert('비밀번호가 정상적으로 변경되었습니다.');\r\n"
 	                  	  	  + "location.href='/MyWeb/myPage.user';\r\n"

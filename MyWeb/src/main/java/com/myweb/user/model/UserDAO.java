@@ -136,7 +136,7 @@ public class UserDAO {
 		return user;
 	}
 
-	public int changePassword(String newPw, String id) {
+	public int changePassword(String id, String newPw) {
 		String sql = "UPDATE my_user SET user_pw = ? WHERE user_id = ?";
 		
 		int a = 0;
@@ -153,6 +153,46 @@ public class UserDAO {
 		}
 		
 		return a;
+	}
+
+	public void updateUser(UserVO user) {
+		String sql = "UPDATE my_user "
+				   + "SET user_name = ?, "
+				   	   + "user_email = ?, "
+				   	   + "user_address = ? "
+			   	   + "WHERE user_id = ?";
+		
+		try(Connection conn = ds.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			
+			pstmt.setString(1, user.getUserName());
+			pstmt.setString(2, user.getUserEmail());
+			pstmt.setString(3, user.getUserAddress());
+			pstmt.setString(4, user.getUserId());
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	public void deleteUser(String id) {
+		String sql = "DELETE FROM my_user "
+				   + "WHERE user_id = ?";
+		
+		try(Connection conn = ds.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			
+			pstmt.setString(1, id);
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 }
