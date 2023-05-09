@@ -18,4 +18,3 @@ CREATE SEQUENCE board_seq
 
 DROP TABLE my_board;
 DROP SEQUENCE board_seq;
-COMMIT;
