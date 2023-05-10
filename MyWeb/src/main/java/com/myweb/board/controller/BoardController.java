@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.myweb.board.service.ContentService;
 import com.myweb.board.service.DeleteService;
@@ -36,8 +35,6 @@ public class BoardController extends HttpServlet {
 		
 		String uri = request.getRequestURI();
 		uri = uri.substring(request.getContextPath().length() + 1, uri.lastIndexOf("."));
-		
-		HttpSession session = request.getSession();
 		
 		switch (uri) {		
 		case "write":

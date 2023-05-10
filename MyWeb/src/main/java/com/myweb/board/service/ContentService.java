@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.myweb.board.model.BoardDAO;
 import com.myweb.board.model.BoardVO;
+import com.myweb.user.model.UserVO;
 
 public class ContentService implements IBoardService {
 
@@ -28,10 +29,6 @@ public class ContentService implements IBoardService {
 	         현재 글 번호와 일치하는 쿠키가 없다면 조회수를 올려주도록 하겠습니다.  
         */
 		
-		Cookie idCoo = new Cookie(strbId, strbId);
-		idCoo.setMaxAge(15);
-		response.addCookie(idCoo);
-		
 		Cookie[] cookies = request.getCookies();
 		boolean flag = false;
 		
@@ -39,11 +36,22 @@ public class ContentService implements IBoardService {
 			for(Cookie c : cookies) {
 				if(c.getName().equals(strbId)) {
 					flag = true;
+					break;
 				}
 			}
 		}
 		
-		if(!flag) {
+		UserVO user = (UserVO) request.getSession().getAttribute("user");
+		String uId = "";
+		
+		if(user != null) {
+			uId = user.getUserId();			
+		}
+		
+		if(!flag && !uId.equals(dao.contentBoard(bId).getWriter())) {
+			Cookie idCoo = new Cookie(strbId, strbId);
+			idCoo.setMaxAge(15);
+			response.addCookie(idCoo);
 			dao.upHit(bId);								
 		}
 		
